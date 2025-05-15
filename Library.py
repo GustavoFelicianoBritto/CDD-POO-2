@@ -151,5 +151,74 @@ class retangulo(forma):
         print(f"O perimetro do retangulo é: {self.perimetro}")
 
 
+class atleta():
+    def __init__(self,aposentado=False,aquecido=False):
+        self.retired=aposentado
+        self.aquecido=aquecido
+
+    def aposentar(self):
+        if self.retired:
+            print("O Atleta já está aposentado...")
+        else:
+            self.retired=True
+            print("O atleta se aposentou")
+
+    def aquecer(self):
+        if not self.retired:
+            if self.aquecido:
+                print("O atleta já está aquecido...")
+            else:
+                print("O Atleta está se aquecendo")
+                self.aquecido=True
+        else:
+            print("O atleta já está aposentado, e não pode aquecer...")
+
+class ciclista(atleta):
+    def __init__(self,aposentado,aquecido):
+        super().__init__(aposentado,aquecido)
+
+    def pedalar(self):
+        if not self.retired:
+            if self.aquecido:
+                print("O Atleta está pedalando")
+            else:
+                print("O atleta não se aqueceu")
+        else:
+            print("O Atleta já está aposentado, e não pode pedalar...")
+
+class nadador(atleta):
+    def __init__(self,aposentado,aquecido):
+        super().__init__(aposentado,aquecido)
+
+    def nadar(self):
+        if not self.retired:
+            if self.aquecido:
+                print("Atleta está nadando")
+            else:
+                print("O atleta não se aqueceu")
+        else:
+            print("O Atleta já está aposentado, e não pode nadar...")
+
+
+class corredor(atleta):
+    def __init__(self,aposentado,aquecido):
+        super().__init__(aposentado,aquecido)
+
+    def correr(self):
+        if not self.retired:
+            if self.aquecido:
+                print("Atleta está correndo")
+            else:
+                print("O atleta não se aqueceu")
+        else:
+            print("O Atleta já está aposentado, e não pode correr...")
+
+
+class triatleta(corredor,nadador,ciclista):
+    def __init__(self,aposentado,aquecido):
+        super().__init__(aposentado,aquecido)
+
+
+
 
 
