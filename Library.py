@@ -110,5 +110,46 @@ class passagemVip(passagem):
         super().__init__(preco,quantidade,is_vip=True)
 
 
+class forma():
+    def __init__(self):
+        self.area=0
+        self.perimetro=0
+
+    def calculoArea(self):
+        pass
+
+    def calculoPerimetro(self):
+        pass
+
+class triangulo(forma):
+    def __init__(self,base,altura,lado):
+        super().__init__()
+        self.base=base
+        self.altura=altura
+        self.lado=lado
+
+    def calculoArea(self):
+        self.area= (self.base*self.altura)/2
+        print(f"A área do triangulo é: {self.area}")
+
+    def calculoPerimetro(self):
+        self.perimetro= 3*self.lado
+        print(f"O perimetro do triangulo é: {self.perimetro}")
+
+class retangulo(forma):
+    def __init__(self,base,altura):
+        super().__init__()
+        self.base=base
+        self.altura=altura
+
+    def calculoArea(self):
+        self.area=self.base*self.altura
+        print(f"A área do retangulo é: {self.area}")
+
+    def calculoPerimetro(self):
+        self.perimetro= 2 * (self.base + self.perimetro)
+        print(f"O perimetro do retangulo é: {self.perimetro}")
+
+
 
 

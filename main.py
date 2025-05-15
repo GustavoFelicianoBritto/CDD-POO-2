@@ -30,4 +30,10 @@ ticket2.printValue()
 
 print()
 
+triangulo1=triangulo(5,5,5)
+triangulo1.calculoArea()
+triangulo1.calculoPerimetro()
 
+retangulo1=retangulo(23,20)
+retangulo1.calculoArea()
+retangulo1.calculoPerimetro()
